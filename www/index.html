@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <!--<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: http://localhost:50776/ 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">-->
+  <!--<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: http://localhost:50776/ https://accounts.google.com https://smartcareapp.azurewebsites.net; style-src 'self'">-->
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="viewport" content="width=device-width, user-scalable=no" />
+  <!--<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">-->
+  <title>Ionic Starter</title>
+  <!-- compiled css output -->
+  <link href="css/ionic.app.css" rel="stylesheet">
+  <link href="lib/ionic-nifty-modal/nifty.modal.css" rel="stylesheet">
+  <link href="lib/ionic-material/dist/ionic.material.css" rel="stylesheet">
+  <link href="css/progress-wizard.min.css" rel="stylesheet">
+  <!-- ionic/angularjs js -->
+  <script src="lib/ionic/js/ionic.bundle.min.js"></script>
+  <script src="lib/angular-ui-mask/dist/mask.js"></script>
+  <script src="lib/ionic-material/dist/ionic.material.min.js"></script>
+  <script src="lib/lodash/lodash.js"></script>
+  <script src="lib/moment/min/moment.min.js"></script>
+  <script src="lib/moment/locale/pt-br.js"></script>
+  <script src="lib/ng-focus-if/focusIf.min.js"></script>
+  <!-- cordova script (you can setup plugin mocks here) -->
+  <script src="lib/ngCordova/dist/ng-cordova.js"></script>
+  <script src="cordova.js"></script>
+
+  <!-- your app's js -->
+  <script src="app/_Logger.js"></script>
+  <script src="app/app.js"></script>
+  <script src="app/constants.js"></script>
+  <script src="app/common/plugins/utils.js"></script>
+  <script src="app/common/plugins/inappbrowser.js"></script>
+  <script src="app/common/plugins/sqlite.js"></script>
+  <script src="app/common/plugins/toast.js"></script>
+  <script src="app/common/plugins/dialogs.js"></script>
+  <script src="app/common/plugins/geolocation.js"></script>
+  <script src="app/common/utils.js"></script>
+  <script src="app/common/storage.js"></script>
+  <script src="app/common/backend.js"></script>
+  <script src="app/common/azure.js"></script>
+  <script src="app/common/ui/utils.js"></script>
+  <script src="app/common/ui/generic-filters.js"></script>
+  <script src="app/common/ui/directives.js"></script>
+  <script src="app/layout/deviceReady.ctrl.js"></script>
+  <script src="app/layout/loading.ctrl.js"></script>
+  <script src="app/layout/layout.ctrl.js"></script>
+  <script src="app/vote/vote.ctrl.js"></script>
+  <script src="app/opnion/opnion.ctrl.js"></script>
+</head>
+<body ng-app="app">
+  <ion-nav-view>
+  </ion-nav-view>
+</body>
+</html>
+<script id="alert-no-plan.html" type="text/ng-template">
+  <ion-modal-view class="ion-nifty-modal">
+    <div class="ion-modal-content-custom">
+      <ion-content class="padding">
+        <span class="item-note">Para marcar uma consulta é necessário assinar um de nossos planos.</span>
+        <button class="button button-fab-full icon-left ion-android-cart button-assertive rounded" ui-sref="app.plan">Novo plano</button>
+        <div class="padding text-center item-text-wrap assertive">
+          <a class="icon-left ion-happy-outline" ui-sref="app.associated" ng-click="closeModal()">Já sou cadastrado ou associado</a>
+        </div>
+      </ion-content>
+    </div>
+  </ion-modal-view>
+</script>
+
+<script id="alert-errors.html" type="text/ng-template">
+  <ion-modal-view class="ion-nifty-modal">
+    <div class="ion-modal-content-custom">
+      <ion-content class="padding">
+        <h4>Erros encontrados:</h4>
+        <hr />
+        <ul class="padding">
+          <li class="royal" ng-repeat="error in errors track by $index">
+            <span class="icon ion-alert-circled"></span>{{error}}
+          </li>
+        </ul>
+        <button class="button button-full button-bar-assertive rounded" ng-click="closeModal()">Ok</button>
+      </ion-content>
+    </div>
+  </ion-modal-view>
+</script>

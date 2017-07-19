@@ -1,0 +1,17 @@
+﻿<ion-side-menus enable-menu-with-back-views="true">
+  <ion-side-menu-content>
+    <ion-nav-bar class="bar-positive">
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-nav-view name="menuContent"></ion-nav-view>
+  </ion-side-menu-content>  
+</ion-side-menus>
+<ion-footer-bar>
+  <ion-tabs class="tabs-icon-bottom" ng-if="!hasMessageNoRead">
+    <ion-tab title="Tradução" icon="ion-home" ui-sref="app.opnion">
+    </ion-tab>
+    <ion-tab title="Votação" icon="ion-folder" ui-sref="app.vote">
+    </ion-tab>
+  </ion-tabs>
+</ion-footer-bar>

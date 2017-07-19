@@ -1,0 +1,17 @@
+{
+  "name": "smartcare",
+  "private": "true",
+  "devDependencies": {
+    "lodash": "~4.17.4",
+    "ionic": "driftyco/ionic-bower#1.*",
+    "robotodraft": "^1.1.0",
+    "ionic-material": "PeaceDeveloper/ionic-material#0.4.4"
+  },
+  "dependencies": {
+    "moment": "~2.18.1",
+    "ngCordova": "^0.1.27-alpha",
+    "ng-focus-if": "^1.0.7",
+    "angular-ui-mask": "^1.8.7",
+    "ionic-nifty-modal": "*"
+  }
+}
