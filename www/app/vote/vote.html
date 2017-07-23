@@ -1,22 +1,18 @@
-<ion-view title="Votação">
-  <ion-content>
-    <div class="list">
-      <div class="item item-toggle"> Paramètre 1
-        <label class="toggle toggle-positive">
-          <input type="checkbox" ng-model="data.settings.setting1">
-          <div class="track">
-            <div class="handle"></div>
-          </div>
-        </label>
-      </div>
-      <div class="item item-toggle"> Paramètre 2
-        <label class="toggle toggle-positive">
-          <input type="checkbox" ng-model="data.settings.setting2">
-          <div class="track">
-            <div class="handle"></div>
-          </div>
-        </label>
-      </div>
-    </div>
-  </ion-content>
+<ion-view title="Tradução" hide-nav-bar="true">
+
+    <ion-content class="has-footer">
+        <h1 class="header text-center positive padding">Votação da melhor legenda</h1>
+        <div class="list padding">
+            <div ng-if="task2">
+                <video 
+                controls autoplay webkit-playsinline
+                type="video/mp4">
+                    HTML5 Video is required for this example
+                </video>
+                <strong>Legenda original: {{task2.legenda_original}}</strong>
+                <button ng-repeat="leg in task2.legendas" ng-click="save(leg);" class="button button-full icon-left ion-android-arrow-dropright-circle button-positive"><div class="content">{{leg.legenda}}</div></button>
+            </div>
+            <strong ng-show="!task2">Tarefa ainda não disponível.</strong>
+        </div>
+    </ion-content>
 </ion-view>

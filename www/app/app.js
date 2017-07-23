@@ -24,6 +24,16 @@
                 templateUrl: 'app/layout/layout.html',
                 controller: 'LayoutCtrl'
             })
+            .state('app.home', {
+                cache: false,
+                url: '/home',
+                views: {
+                    'menuContent': {
+                        templateUrl: 'app/home/home.html',
+                        controller: 'HomeCtrl'
+                    }
+                }
+            })
             .state('app.opnion', {
                 cache: false,
                 url: '/opnion',

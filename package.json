@@ -1,16 +1,23 @@
 {
     "name": "crowdsub",
-    "version": "0.0.1",
+    "version": "0.0.1-beta",
     "description": "An crowdsource app app",
     "dependencies": {
+        "cordova-android": "^6.2.3",
+        "cordova-ios": "^4.4.0",
         "cordova-plugin-actionsheet": "^2.3.3",
         "cordova-plugin-compat": "^1.1.0",
         "cordova-plugin-console": "^1.0.7",
         "cordova-plugin-device": "^1.1.6",
+        "cordova-plugin-geolocation": "^2.4.3",
         "cordova-plugin-inappbrowser": "^1.7.1",
+        "cordova-plugin-ms-azure-mobile-apps": "git+https://github.com/PeaceDeveloper/azure-mobile-apps-cordova-client.git#2.0.1",
+        "cordova-plugin-network-information": "^1.3.3",
+        "cordova-plugin-sms": "git+https://github.com/azomazo/cordova-plugin-sms.git",
         "cordova-plugin-splashscreen": "^3.2.2",
         "cordova-plugin-statusbar": "^2.2.3",
-        "cordova-plugin-whitelist": "^1.3.2",        
+        "cordova-plugin-whitelist": "^1.3.2",
+        "cordova-plugin-x-socialsharing": "git+https://github.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin.git",
         "cordova-plugin-x-toast": "^2.6.0",
         "cordova-sqlite-storage": "^1.4.8",
         "es6-promise-plugin": "^4.1.0",
@@ -19,7 +26,9 @@
         "gulp-minify-css": "^1.2.4",
         "gulp-rename": "^1.2.2",
         "gulp-sass": "^3.1.0",
-        "ionic-plugin-keyboard": "^1.0.9"
+        "ionic-plugin-keyboard": "^1.0.9",
+        "phonegap-plugin-push": "^1.10.5",
+        "uk.co.workingedge.phonegap.plugin.launchnavigator": "^3.2.2"
     },
     "devDependencies": {
         "bower": "^1.8.0",
@@ -49,9 +58,7 @@
         "cordova-sqlite-storage@^1.4.8",
         "ionic-plugin-keyboard@^1.0.9"
     ],
-    "cordovaPlatforms": [
-        
-    ],
+    "cordovaPlatforms": [],
     "cordova": {
         "plugins": {
             "cordova-plugin-console": {},
@@ -63,10 +70,20 @@
             "cordova-plugin-x-toast": {},
             "cordova-sqlite-storage": {},
             "ionic-plugin-keyboard": {},
-            "cordova-plugin-compat": {}
+            "cordova-plugin-compat": {},
+            "cordova-plugin-geolocation": {},
+            "cordova-plugin-ms-azure-mobile-apps": {},
+            "cordova-plugin-network-information": {},
+            "cordova-plugin-sms": {},
+            "cordova-plugin-x-socialsharing": {},
+            "phonegap-plugin-push": {
+                "SENDER_ID": "865894984784"
+            },
+            "uk.co.workingedge.phonegap.plugin.launchnavigator": {}
         },
         "platforms": [
-            
+            "android",
+            "ios"
         ]
     }
 }

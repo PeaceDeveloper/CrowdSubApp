@@ -7,175 +7,34 @@
 
   function Storage(_StorageUtils){
     var keys = {
-      user: 'user',
-      userSettings: 'user-settings',
-      twitts: 'twitts',
-      service: 'service',
-      services:'services',
-      specialty: 'specialty',
-      servicesaddresses: 'servicesaddresses',
-      plan: 'plan',
-      device: 'device',
-      marking: 'marking',
-      markingsScheduled:'markingsScheduled',
-      notification:'notification',
-      contractInDebt:'contractInDebt'
+      user: 'user'
     };
     return {
       // user
       getUser: getUser,
       setUser: setUser,
-      getUserSettings: getUserSettings,
-      setUserSettings: setUserSettings,
-      // twitts
-      getTwitt: getTwitt,
-      getTwitts: getTwitts,
-      setTwitts: setTwitts,
-      // service
-      setService: setService,
-      getService: getService,
-      //services
-      setServices:setServices,
-      getServices:getServices,
-      // Specialty
-      setSpecialty: setSpecialty,
-      getSpecialty: getSpecialty,
-      // plan
-      setPlan: setPlan,
-      getPlan: getPlan,
-        // Device
-      setDevice: setDevice,
-      getDevice: getDevice,
-        //marking
-      setMarking: setMarking,
-      getMarking: getMarking,
-        //markings scheduled
-      setMarkingsScheduled:setMarkingsScheduled,
-      getMarkingsScheduled:getMarkingsScheduled,
-        //notification
-      setNotification: setNotification,
-      getNotification: getNotification,
-      //contractInDebt
-      setContractInDebt:setContractInDebt,
-      getContractInDebt:getContractInDebt,
-      //serviceAddress
-      setServiceAddressByIdSpecialty:setServiceAddressByIdSpecialty,
-      getServiceAddressByIdSpecialty:getServiceAddressByIdSpecialty,
       // global
       clear: clear
     };
-
-    function setServiceAddressByIdSpecialty(idSpecialty, serviceAdresses){
-      return _StorageUtils.set(idSpecialty, serviceAdresses)
-    }
-
-    function getServiceAddressByIdSpecialty(idSpecialty){
-      return _StorageUtils.get(idSpecialty);
-    }    
-
-    function setNotification(notification) {
-        return _StorageUtils.set(keys.notification, notification);
-    }
-    function getNotification() {
-        return _StorageUtils.get(keys.notification);
-    }
-
-    function setMarking(marking) {
-        return _StorageUtils.set(keys.marking, marking);
-    }
-
-    function getMarking() {
-        return _StorageUtils.get(keys.marking);
-    }
-
-    function setMarkingsScheduled(markings) {
-        return _StorageUtils.set(keys.markingsScheduled, markings);
-    }
-
-    function getMarkingsScheduled() {
-        return _StorageUtils.get(keys.markingsScheduled);
-    }
-
-    function setDevice(device) {
-        return _StorageUtils.set(keys.device, device);
-    }
-
-    function getDevice() {
-        return _StorageUtils.get(keys.device);
-    }
-
-    function setPlan(plan) {
-        return _StorageUtils.set(keys.plan, plan);
-    }
-
-    function getPlan() {
-        return _StorageUtils.get(keys.plan);
-    }
-
-    function setSpecialty(specialty) {
-        return _StorageUtils.set(keys.specialty, specialty);
-    }
-
-    function getSpecialty() {
-        return _StorageUtils.get(keys.specialty);
-    }
-
-    function getService() {
-        return _StorageUtils.get(keys.service);
-    }
-
-    function setService(service) {
-        return _StorageUtils.set(keys.service, service);
-    }
-
-    function getServices(){
-      return _StorageUtils.get(keys.services);
-    }
-
-    function setServices(itens){
-      return _StorageUtils.set(keys.services, itens);
-    }
-
+    
     function getUser(){
       return _StorageUtils.get(keys.user);
     }
 
-    function setUser(user){
-      return _StorageUtils.set(keys.user, user);
+    function setUser(){
+      return _StorageUtils.set(keys.user, guid());
     }
 
-    function getUserSettings(){
-      return _StorageUtils.get(keys.userSettings, {
-        autoSendActions: true,
-        logsActivated: true
-      });
+    function guid() {
+      function s4() {
+        return Math.floor((1 + Math.random()) * 0x10000)
+          .toString(16)
+          .substring(1);
+      }
+      return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
+        s4() + '-' + s4() + s4() + s4();
     }
 
-    function setUserSettings(settings){
-      return _StorageUtils.set(keys.userSettings, settings);
-    }
-
-    function getTwitt(id){
-      return getTwitts().then(function(twitts){
-        return _.find(twitts, {id: id});
-      });
-    }
-
-    function getTwitts(){
-      return _StorageUtils.get(keys.twitts);
-    }
-
-    function setTwitts(twitts){
-      return _StorageUtils.set(keys.twitts, twitts);
-    }
-
-    function setContractInDebt(contractInDebt){
-      return _StorageUtils.set(keys.contractInDebt, contractInDebt);
-    }
-
-    function getContractInDebt(){
-      return _StorageUtils.get(keys.contractInDebt);
-    }
 
     function clear(){
       return _StorageUtils.clear();

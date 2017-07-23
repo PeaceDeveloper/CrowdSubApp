@@ -6,7 +6,8 @@
     })
     .constant('API_ENDPOINT', {
         url: 
-        "https://secret-meadow-82120.herokuapp.com/"
+        //"http://secret-meadow-82120.herokuapp.com/"
+        "http://46.101.129.171:8080/"
         //"https://smartcareapp.azurewebsites.net/"
     });
 })();

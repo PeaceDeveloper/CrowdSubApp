@@ -1,10 +1,20 @@
 <ion-view title="Tradução" hide-nav-bar="true">
 
     <ion-content class="has-footer">
-        <h1 class="header text-center positive padding">Crowdsub</h1>
+        <h1 class="header text-center positive padding">Tradução de legendas</h1>
         <div class="list padding">
-            <button class="button button-full icon-left ion-android-arrow-dropright-circle button-positive"><div class="content">Opinar</div></button>
-            <button ui-sref="app.vote" class="button button-full icon-left ion-android-arrow-dropright-circle button-balanced"><div class="content">Votar</div></button>
+            <div>
+                <video 
+                controls autoplay webkit-playsinline
+                type="video/mp4">
+                    HTML5 Video is required for this example
+                </video>
+                <strong>Legenda original: {{task1.legenda}}</strong>
+                <label class="item item-input">
+                    <input type="text" ng-model="task1Submit.legenda"  placeholder="digite a tradução dessa legenda">
+                </label>
+                <button ng-click="save();" class="button button-full icon-left ion-android-arrow-dropright-circle button-positive"><div class="content">Enviar tradução</div></button>
+            </div>
         </div>
     </ion-content>
 
