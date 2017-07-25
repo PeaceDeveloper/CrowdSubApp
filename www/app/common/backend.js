@@ -9,13 +9,14 @@
 
   function Backend(Storage, API_ENDPOINT, $http){
 
+    var taskEnabled = API_ENDPOINT.url + 'api/taskEnabled'
     var task1 = API_ENDPOINT.url + 'api/task1';
     var task2 = API_ENDPOINT.url + 'api/task2';
 
     function distribute(){
         return $http({
             method: 'GET',
-            url: API_ENDPOINT.url
+            url: taskEnabled
           }).then(getResult, function(res){
             Logger.error(res);
             return res;

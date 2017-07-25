@@ -9,7 +9,7 @@
                 type="video/mp4">
                     HTML5 Video is required for this example
                 </video>
-                <strong>Legenda original: {{task2.legenda_original}}</strong>
+                <p> Legenda original: <span ng-bind-html="task2.legenda_original"></span></p>
                 <button ng-repeat="leg in task2.legendas" ng-click="save(leg);" class="button button-full icon-left ion-android-arrow-dropright-circle button-positive"><div class="content">{{leg.legenda}}</div></button>
             </div>
             <strong ng-show="!task2">Tarefa ainda não disponível.</strong>

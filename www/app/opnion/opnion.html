@@ -9,11 +9,11 @@
                 type="video/mp4">
                     HTML5 Video is required for this example
                 </video>
-                <strong>Legenda original: {{task1.legenda}}</strong>
+                <p>Legenda original: <span ng-bind-html="task1.legenda"></span></p>
                 <label class="item item-input">
                     <input type="text" ng-model="task1Submit.legenda"  placeholder="digite a tradução dessa legenda">
                 </label>
-                <button ng-click="save();" class="button button-full icon-left ion-android-arrow-dropright-circle button-positive"><div class="content">Enviar tradução</div></button>
+                <button ng-disabled="!task1Submit.legenda" ng-click="save();" class="button button-full icon-left ion-android-arrow-dropright-circle button-positive"><div class="content">Enviar tradução</div></button>
             </div>
         </div>
     </ion-content>

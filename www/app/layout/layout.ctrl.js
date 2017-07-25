@@ -9,6 +9,12 @@
         var fn = {};
         $scope.fn = fn;
 
+        $scope.taskEnabled = function(Backend){
+            return Backend.distribute().then(function(res){
+                return res.data.task;
+            });
+        }
+
         fn.logout = function () {
             Storage.clear().then(function () {
                 $ionicHistory.clearHistory();

@@ -3,8 +3,8 @@
     <ion-content class="has-footer">
         <h1 class="header text-center positive padding">Crowdsub</h1>
         <div class="list padding">
-            <button ui-sref="app.opnion" class="button button-full icon-left ion-android-arrow-dropright-circle button-positive"><div class="content">Tradução</div></button>
-            <button ui-sref="app.vote" class="button button-full icon-left ion-android-arrow-dropright-circle button-balanced"><div class="content">Votar</div></button>
+            <button ui-sref="app.opnion" ng-disabled="taskEnabledNumber.id == 2" class="button button-full icon-left ion-android-arrow-dropright-circle button-positive"><div class="content">Tradução</div></button>
+            <button ui-sref="app.vote" ng-disabled="taskEnabledNumber.id == 1" class="button button-full icon-left ion-android-arrow-dropright-circle button-balanced"><div class="content">Votação</div></button>
         </div>
     </ion-content>
 
